@@ -20,7 +20,7 @@ laura = Laura() # create object
 # Blue base - Align left wheel left side to 2nd Bold line from left
 
 
-def Route1():
+def Route2():
     laura.Hub_StatusLight(Color.MAGENTA)
 
     """ Optional - Unregulated motor """
@@ -40,7 +40,7 @@ def Route1():
     """ Start your code here """
     # Step 1 - Wall squaring & ...
     laura.MoveSteering_Seconds(-150, 0, 300, True, 200) # wall squaring
-    laura.MoveStraight_Distance(500, 300, 200, True, True, Stop.BRAKE, 20)
+    
 
     """ Optional - Timer end """
     # print("Time used: ", timer1.time())
@@ -50,4 +50,4 @@ def Route1():
 # For individual route testing only
 # Comment it when using Master Program
 
-Route1()
+# Route1()

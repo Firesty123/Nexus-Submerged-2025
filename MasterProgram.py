@@ -5,9 +5,10 @@ from pybricks.tools import wait, StopWatch, Matrix
 
 ######################## Custom program ########################
 
-from ACL_FLL_v02 import *
+from ACL_FLL_v03 import *
 from Route1 import *
 from Route2 import *
+from Route3 import *
 
 laura = Laura() #create object
 
@@ -48,8 +49,8 @@ while True:
     # Unregulated motor power = 100 to -100
     else:
         if CURRENT_ROUTE == 1:
-            laura.Unregulated_AttachMotor(50, -50)
+            laura.Unregulated_AttachMotor(50, -50, 50)
         elif CURRENT_ROUTE == 2:
-            laura.Unregulated_AttachMotor(-80, 30)
+            laura.Unregulated_AttachMotor(-80, 30, 50)
         elif CURRENT_ROUTE == 3:
-            laura.Unregulated_AttachMotor(20, 70)
+            laura.Unregulated_AttachMotor(20, 70, 50)
