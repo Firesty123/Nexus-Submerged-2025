@@ -30,7 +30,7 @@ from pybricks.tools import wait, StopWatch
 
 pi = 3.1415926535897
 
-WHEEL_SIZE = 61
+WHEEL_SIZE = 61 # Measuerement in milimeter
 WHEEL_SPACING = 145 #160
 
 STR_SPEED = 400
