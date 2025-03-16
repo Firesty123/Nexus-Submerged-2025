@@ -39,8 +39,8 @@ def Route1():
 
     """ Start your code here """
     # Step 1 - Wall squaring & ...
-    laura.MoveSteering_Seconds(-150, 0, 300, True, 200) # wall squaring
-    laura.MoveStraight_Distance(500, 300, 200, True, True, Stop.BRAKE, 20)
+    laura.MoveSteering_Seconds(-150, 0, 300, True, 200) # wall squaring 
+    laura.MoveStraight_Distance(500, 300, 200, True, True, Stop.BRAKE, 200)
     laura.SingleMotor_ByDegree(PORT_LEFTDRIVE, True, 400, 100, Stop.BRAKE, True)
 
     """ Optional - Timer end """
@@ -51,4 +51,4 @@ def Route1():
 # For individual route testing only
 # Comment it when using Master Program
 
-Route1()
+#Route1()
