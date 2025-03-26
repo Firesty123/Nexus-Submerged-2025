@@ -24,9 +24,9 @@ def Route3():
     laura.Hub_StatusLight(Color.MAGENTA)
 
     """ Optional - Unregulated motor """
-    # laura.Unregulated_AttachMotor(50,-50)
-    # while not Button.CENTER in laura.Hub_ButtonPressed():
-    #     wait(20)
+    laura.Unregulated_AttachMotor(40,40,35)
+    while not Button.CENTER in laura.Hub_ButtonPressed():
+        wait(20)
     
     """ Route start """
     laura.SingleMotor_Brake(PORT_LEFTATTACH)
@@ -38,10 +38,39 @@ def Route3():
     # timer1.reset()
 
     """ Start your code here """
-    # Step 1 - Wall squaring & ...
-    laura.MoveSteering_Seconds(-150, 0, 300, True, 200) # wall squaring
+    # Step 1 - Wall squaring & Move to Ship
+    laura.MoveSteering_Seconds(-150, 0, 300, True, 100) # wall squaring
+    laura.MoveStraight_Distance(610,550,600,False,True,Stop.BRAKE,50)
+    laura.PointTurn_Angle(True,400,300,90,True,Stop.BRAKE,50)
     
-
+    #Step 2 - Collect the Chest & Lift Ship Up
+    
+    laura.MoveStraight_Distance(500,400,100,False,True,Stop.BRAKE,50)
+    laura.MoveSteering_Seconds(100,0,1050,Stop.COAST,50)
+    
+    #Step 3 - Move to Shark and Coral
+    
+    laura.MoveStraight_Distance(400,200,-145,False,True,Stop.BRAKE,100)
+    laura.PointTurn_Angle(True,-600,550,90,True,Stop.BRAKE,50)
+    laura.MoveSteering_Seconds(-400,0,2000,Stop.COAST,50)
+    
+    #Step 4 - Press Shark Down and Put 
+    
+    laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,-700,700,Stop.COAST,False)
+    laura.SingleMotor_BySeconds(PORT_LEFTATTACH,-1000,700,Stop.COAST,True)
+    
+    wait(50)
+    
+    laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,800,500,Stop.BRAKE,False)
+    laura.SingleMotor_BySeconds(PORT_LEFTATTACH,1000,500,Stop.BRAKE,True)
+    
+    #Step 5 - Return to Base
+    
+    laura.MoveSteering_Degree(True,1000,5,1400,Stop.COAST,50)
+    
+    laura.SingleMotor_Brake(PORT_LEFTDRIVE)
+    laura.SingleMotor_Brake(PORT_RIGHTDRIVE)
+    
     """ Optional - Timer end """
     # print("Time used: ", timer1.time())
 
@@ -50,4 +79,4 @@ def Route3():
 # For individual route testing only
 # Comment it when using Master Program
 
-# Route1()
+Route3()
