@@ -70,7 +70,7 @@ while True:
         elif CURRENT_ROUTE == 2:
             laura.Unregulated_AttachMotor(-80, 30, 50)
         elif CURRENT_ROUTE == 3:
-            laura.Unregulated_AttachMotor(20, 70, 50)
+            laura.Unregulated_AttachMotor(30, 30, 30)
         elif CURRENT_ROUTE == 4:
             laura.Unregulated_AttachMotor(20, 70, 50)
         elif CURRENT_ROUTE == 5:
