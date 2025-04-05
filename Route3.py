@@ -74,6 +74,7 @@ def Route3():
     laura.SingleMotor_Brake(PORT_LEFTDRIVE)
     laura.SingleMotor_Brake(PORT_RIGHTDRIVE)
     
+    
     """ Optional - Timer end """
     # print("Time used: ", timer1.time())
 
