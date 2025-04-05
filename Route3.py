@@ -64,6 +64,7 @@ def Route3():
     wait(50)
     
     laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,800,500,Stop.BRAKE,False)
+    laura.MoveSteering_Seconds(300,0,250,Stop.BRAKE,True)
     laura.SingleMotor_BySeconds(PORT_LEFTATTACH,100,1000,Stop.BRAKE,True)
     
     #Step 5 - Return to Base

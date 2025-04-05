@@ -39,9 +39,8 @@ def Route1():
 
     """ Start your code here """
     # Step 1 - Wall squaring & ...
-    laura.MoveSteering_Seconds(-150, 0, 300, True, 200) # wall squaring 
-    laura.MoveStraight_Distance(500, 300, 200, True, True, Stop.BRAKE, 200)
-    laura.SingleMotor_ByDegree(PORT_LEFTDRIVE, True, 400, 100, Stop.BRAKE, True)
+    laura.MoveStraight_Distance(400,500,700,False,True,Stop.BRAKE,200)
+    
 
     """ Optional - Timer end """
     # print("Time used: ", timer1.time())

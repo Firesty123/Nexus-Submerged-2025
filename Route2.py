@@ -24,9 +24,9 @@ def Route2():
     laura.Hub_StatusLight(Color.MAGENTA)
 
     """ Optional - Unregulated motor """
-    # laura.Unregulated_AttachMotor(50,-50)
-    # while not Button.CENTER in laura.Hub_ButtonPressed():
-    #     wait(20)
+    laura.Unregulated_AttachMotor(50,-50,50)
+    while not Button.CENTER in laura.Hub_ButtonPressed():
+        wait(20)
     
     """ Route start """
     laura.SingleMotor_Brake(PORT_LEFTATTACH)
@@ -39,7 +39,7 @@ def Route2():
 
     """ Start your code here """
     # Step 1 - Wall squaring & ...
-    laura.MoveSteering_Seconds(-150, 0, 300, True, 200) # wall squaring
+    laura.MoveSteering_Seconds(300,0,200,Stop.BRAKE,True)
     
 
     """ Optional - Timer end """
@@ -50,4 +50,4 @@ def Route2():
 # For individual route testing only
 # Comment it when using Master Program
 
-# Route1()
+Route2()
