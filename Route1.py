@@ -39,17 +39,23 @@ def Route1():
 
     """ Start your code here """
     # Step 1 - Wall squaring & ...
+    
+    laura.MoveSteering_Seconds(-150, 0, 300, True, 200)
+    
     laura.SingleMotor_BySeconds(PORT_LEFTATTACH,-500,800,Stop.BRAKE,False)
     laura.MoveStraight_Distance(400,400,740,False,True,Stop.BRAKE,50)
     laura.SingleMotor_BySeconds(PORT_LEFTATTACH,500,600,Stop.BRAKE,False)
     laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,600,2000,Stop.BRAKE,True)
     laura.PointTurn_Degree(True,-300,30,False,500)
     laura.SingleMotor_BySeconds(PORT_LEFTATTACH,-500,600,Stop.BRAKE,True)
-    laura.MoveStraight_Distance(400,400,770,False,True,Stop.BRAKE,50)
+    laura.MoveStraight_Distance(400,400,780,False,True,Stop.BRAKE,50)
     laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,-1000,2000,Stop.BRAKE,True)
-    laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,1000,2000,Stop.BRAKE,False)
-    laura.MoveStraight_Distance(400,400,300,False,True,Stop.BRAKE,50)
-    
+    laura.MoveStraight_Distance(400,400,320,False,False,Stop.BRAKE,50)
+    wait(100)
+    laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,1000,2000,Stop.BRAKE,True)
+    #laura.SingleMotor_BySeconds(PORT_LEFTATTACH,300,500,Stop.BRAKE,False)
+    laura.LockTurn_Degree(True,PORT_RIGHTDRIVE,700,190,Stop.BRAKE,50)
+    laura.MoveSteering_Degree(True,700,-20,1000,Stop.COAST,20)
 
     """ Optional - Timer end """
     # print("Time used: ", timer1.time())
