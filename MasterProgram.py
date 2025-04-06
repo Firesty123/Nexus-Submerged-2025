@@ -20,6 +20,7 @@ laura = Laura() #create object
 ######################## Total route ########################
 
 CURRENT_ROUTE = 1
+
 MAX_ROUTE = 8 # modify accordingly
 
 ######################## Main program ########################
@@ -54,7 +55,7 @@ while True:
             Route6()
         elif CURRENT_ROUTE == 7:
             Route7()
-        elif CURRENT_ROUTE == 9:
+        elif CURRENT_ROUTE == 8:
             Route8()
 
         # auto-run next route
@@ -66,18 +67,18 @@ while True:
     
     else:
         if CURRENT_ROUTE == 1:
-            laura.Unregulated_AttachMotor(50, -50, 50)
+            laura.Unregulated_AttachMotor(50,-50,50)
         elif CURRENT_ROUTE == 2:
-            laura.Unregulated_AttachMotor(-80, 30, 50)
+            laura.Unregulated_AttachMotor(50,50,50)
         elif CURRENT_ROUTE == 3:
-            laura.Unregulated_AttachMotor(30, 30, 30)
+            laura.Unregulated_AttachMotor(50,50,50)
         elif CURRENT_ROUTE == 4:
             laura.Unregulated_AttachMotor(20, 70, 50)
         elif CURRENT_ROUTE == 5:
             laura.Unregulated_AttachMotor(20, 70, 50)
         elif CURRENT_ROUTE == 6:
-            laura.Unregulated_AttachMotor(20, 70, 50)
+            laura.Unregulated_AttachMotor(-50,-50,50)
         elif CURRENT_ROUTE == 7:
             laura.Unregulated_AttachMotor(20, 70, 50)
         elif CURRENT_ROUTE == 8:
-            laura.Unregulated_AttachMotor(20, 70, 50)
+            laura.Unregulated_AttachMotor(30,30,50)

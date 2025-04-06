@@ -24,9 +24,9 @@ def Route3():
     laura.Hub_StatusLight(Color.MAGENTA)
 
     """ Optional - Unregulated motor """
-    laura.Unregulated_AttachMotor(50,50,50)
-    while not Button.CENTER in laura.Hub_ButtonPressed():
-        wait(20)
+    # laura.Unregulated_AttachMotor(50,50,50)
+    # while not Button.CENTER in laura.Hub_ButtonPressed():
+    #     wait(20)
     
     """ Route start """
     laura.SingleMotor_Brake(PORT_LEFTATTACH)
@@ -82,4 +82,4 @@ def Route3():
 # For individual route testing only
 # Comment it when using Master Program
 
-Route3()
+#Route3()
