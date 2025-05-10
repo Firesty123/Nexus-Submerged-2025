@@ -24,7 +24,7 @@ def Route1():
     laura.Hub_StatusLight(Color.MAGENTA)
 
     """ Optional - Unregulated motor """
-    # laura.Unregulated_AttachMotor(50,-50)
+    # laura.Unregulated_AttachMotor(50,-50,50) 
     # while not Button.CENTER in laura.Hub_ButtonPressed():
     #     wait(20)
     
