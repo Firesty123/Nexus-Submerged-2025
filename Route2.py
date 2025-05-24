@@ -39,7 +39,7 @@ def Route2():
 
     """ Start your code here """
     # Step 1 - Wall squaring & ...
-    laura.MoveSteering_Seconds(-150, 0, 300, True, 200) # wall squaring
+    laura.MoveSteering_Seconds(300,0,200,Stop.BRAKE,True)
     
     laura.MoveStraight_Distance(800,700,100,False,True,Stop.BRAKE,10)
     laura.LockTurn_Degree(True,PORT_RIGHTDRIVE,700,190,Stop.BRAKE,10)
