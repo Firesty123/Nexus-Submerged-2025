@@ -54,7 +54,7 @@ while True:
             Route6()
         elif CURRENT_ROUTE == 7:
             Route7()
-        elif CURRENT_ROUTE == 9:
+        elif CURRENT_ROUTE == 8:
             Route8()
 
         # auto-run next route
