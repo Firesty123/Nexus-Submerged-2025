@@ -40,33 +40,33 @@ def Route3():
     """ Start your code here """
     # Step 1 - Wall squaring & Move to Ship
     laura.MoveSteering_Seconds(-100, 0, 300, True, 100) # wall squaring
-    laura.MoveStraight_Distance(460,550,598,False,True,Stop.BRAKE,50)
-    laura.PointTurn_Degree(True,400,201,Stop.BRAKE,20)
+    laura.MoveStraight_Distance(470,550,598,False,True,Stop.BRAKE,50)
+    laura.PointTurn_Degree(True,400,208,Stop.BRAKE,2000)
     
     #Step 2 - Collect the Chest & Lift Ship Up
     
-    laura.MoveStraight_Distance(400,400,100,False,True,Stop.BRAKE,50)
-    laura.MoveSteering_Seconds(100,0,825,Stop.BRAKE,50)
+    laura.MoveStraight_Distance(360,400,100,False,True,Stop.BRAKE,50)
+    laura.MoveSteering_Seconds(150,0,1050,Stop.BRAKE,50)
     
     #Step 3 - Move to Shark and Coral
     
-    laura.MoveStraight_Distance(400,200,-147,False,True,Stop.BRAKE,100)
-    laura.PointTurn_Degree(True,300,205,Stop.BRAKE,50)
-    laura.MoveStraight_Distance(400,350,-500,False,True,Stop.COAST,50)
+    laura.MoveStraight_Distance(400,200,-145,False,True,Stop.BRAKE,100)
+    laura.PointTurn_Degree(True,300,206,Stop.BRAKE,50)
+    laura.MoveStraight_Distance(400,350,-510,False,True,Stop.COAST,50)
     
     #Step 4 - Press Shark Down and Put 
     
     laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,-500,800,Stop.BRAKE,False)
-    laura.SingleMotor_BySeconds(PORT_LEFTATTACH,-2000,900,Stop.BRAKE,True)
+    laura.SingleMotor_BySeconds(PORT_LEFTATTACH,-9000,2000,Stop.BRAKE,True)
     
     
     laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,660,600,Stop.BRAKE,False)
-    laura.SingleMotor_BySeconds(PORT_LEFTATTACH,195,600,Stop.BRAKE,True)
+    laura.SingleMotor_ByDegree(PORT_LEFTATTACH,True,600,90,Stop.BRAKE,True)
     
     wait(50)
     
     #Step 5 - Return to Base
-    laura.MoveStraight_Distance(900,700,300,False,True,Stop.COAST,0)
+    laura.MoveStraight_Distance(500,700,300,False,True,Stop.COAST,0)
     laura.MoveSteering_Seconds(950,20,1500,Stop.BRAKE,100)
     
     
