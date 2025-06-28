@@ -24,7 +24,7 @@ def Route7():
     laura.Hub_StatusLight(Color.MAGENTA)
 
     """ Optional - Unregulated motor """
-    laura.Unregulated_AttachMotor(50,-50,50)
+    laura.Unregulated_AttachMotor(50,50,50)
     while not Button.CENTER in laura.Hub_ButtonPressed():
         wait(20)
     
@@ -39,36 +39,29 @@ def Route7():
 
     """ Start your code here """ 
     #
-    # Step 1 - Wall squaring 
-    laura.MoveSteering_Seconds(-150, 0, 1000, True, 20)
+    # Step 1 - Wall squaring
+    laura.MoveSteering_Seconds(-100, 0, 300, True, 100) # wall squaring
     
     #Step 2 - Complete Change Shipping Lanes
-    laura.MoveStraight_Distance(600,400,350,False,True,Stop.BRAKE,50)
-    laura.LockTurn_Degree(True,PORT_LEFTDRIVE,1000,200,Stop.BRAKE,50)
+    laura.MoveStraight_Distance(600,400,480,False,True,Stop.BRAKE,50)
+    laura.LockTurn_Degree(True,PORT_RIGHTDRIVE,-1000,200,True,50)
     laura.MoveStraight_Distance(200,600,50,False,True,Stop.BRAKE,50)
-    laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,1000,1500,Stop.BRAKE,True)
-    
-    #Note: May be inconsistent
-    laura.MoveStraight_Distance(600,100,-311,False,True,Stop.BRAKE,20)
-    laura.LockTurn_Degree(True,PORT_LEFTDRIVE,600,600,Stop.BRAKE,50)
-    #Close Note
-    
-    laura.SingleMotor_BySeconds(PORT_LEFTDRIVE,1000,200,Stop.BRAKE,50)
-    
+    laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,-2000,1800,Stop.BRAKE,True)
+    laura.MoveStraight_Distance(600,500,-215,False,True,Stop.BRAKE,20)
+    laura.LockTurn_Degree(True,PORT_RIGHTDRIVE,600,205,Stop.BRAKE,100)
+
     #Step 3 - Complete Sonar Discovery
-    laura.SingleMotor_BySeconds(PORT_LEFTATTACH,-100,200,Stop.BRAKE,True)
-    laura.MoveStraight_Distance(400,250,-550,False,True,Stop.BRAKE,200)
-    laura.SingleMotor_BySeconds(PORT_LEFTATTACH,-1000,800,Stop.BRAKE,50)
-    laura.MoveStraight_Distance(400,300,-250,False,True,Stop.BRAKE,200)
-    laura.MoveStraight_Distance(200,100,-100,False,True,Stop.BRAKE,50)
-    laura.MoveStraight_Distance(300,200,60,False,True,Stop.BRAKE,50)
-    laura.SingleMotor_BySeconds(PORT_LEFTATTACH,300,1200,Stop.BRAKE,True)
-    laura.MoveStraight_Distance(300,200,100,False,True,Stop.BRAKE,50)
-    laura.LockTurn_Degree(True,PORT_RIGHTDRIVE,1000,80,True,50)
+    laura.MoveStraight_Distance(400,250,400,False,True,Stop.BRAKE,100)
+    laura.MoveSteering_Degree(True,100,2,350,True,50)
+    laura.SingleMotor_BySeconds(PORT_LEFTATTACH,-300,1800,Stop.BRAKE,True)
+    laura.MoveStraight_Distance(300,200,-100,False,True,Stop.BRAKE,50)
 
     #Step 4 - Go Back To Blue Base
-    laura.MoveStraight_Distance(1000,900,770,False,True,Stop.BRAKE,50)
+    laura.MoveStraight_Distance(1000,900,-650,False,True,Stop.BRAKE,50)
+    laura.LockTurn_Degree(True,PORT_LEFTDRIVE,-600,205,Stop.BRAKE,100)
+    laura.MoveStraight_Distance(1000,700,-250,False,True,Stop.BRAKE,50)
     
+
     """ Optional - Timer end """
     # print("Time used: ", timer1.time())
 
