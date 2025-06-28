@@ -24,9 +24,9 @@ def Route2():
     laura.Hub_StatusLight(Color.MAGENTA)
 
     """ Optional - Unregulated motor """
-    # laura.Unregulated_AttachMotor(50,50,50) 
-    # while not Button.CENTER in laura.Hub_ButtonPressed():
-    #     wait(20)
+    laura.Unregulated_AttachMotor(40,40,30) 
+    while not Button.CENTER in laura.Hub_ButtonPressed():
+        wait(20)
     
     """ Route start """
     laura.SingleMotor_Brake(PORT_LEFTATTACH)
@@ -39,14 +39,27 @@ def Route2():
 
     """ Start your code here """
     # Step 1 - Wall squaring & ...
-    laura.MoveSteering_Seconds(300,0,200,Stop.BRAKE,True)
     
-    laura.MoveStraight_Distance(800,700,100,False,True,Stop.BRAKE,10)
-    laura.LockTurn_Degree(True,PORT_RIGHTDRIVE,700,190,Stop.BRAKE,10)
-    laura.MoveStraight_Distance(800,700,210,False,True,Stop.BRAKE,10)
-    laura.LockTurn_Degree(True,PORT_LEFTDRIVE,700,180,Stop.BRAKE,10)
-    laura.SingleMotor_BySeconds(PORT_LEFTATTACH,-300,1000,Stop.COAST,False)
-    laura.MoveStraight_Distance(600,600,-700,False,True,Stop.COAST,10)
+    laura.MoveSteering_Seconds(-150, 0, 300, True, 200) # wall squaring
+    
+    laura.MoveStraight_Distance(800,600,719,True,True,Stop.BRAKE,10)
+
+    laura.PointTurn_Degree(True,-700,180,True,10)
+    
+
+    laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,-800,700,Stop.COAST,False)
+    laura.SingleMotor_BySeconds(PORT_LEFTATTACH,-800,900,Stop.COAST,True)
+    
+    laura.MoveSteering_Seconds(200,3,500,True,10)
+
+    laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,200,900,Stop.COAST,False)
+    laura.SingleMotor_BySeconds(PORT_LEFTATTACH,800,900,Stop.COAST,True)
+    
+    laura.MoveStraight_Distance(800,600,-100,True,True,Stop.BRAKE,0)
+    
+    laura.PointTurn_Degree(True,-700,60,True,0)
+    
+    laura.MoveSteering_Seconds(1000,-10,1500,True,0)
     
 
     """ Optional - Timer end """
@@ -57,4 +70,4 @@ def Route2():
 # For individual route testing only
 # Comment it when using Master Program
 
-#Route2()
+Route2()
