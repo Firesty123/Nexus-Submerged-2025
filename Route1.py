@@ -20,7 +20,7 @@ laura = Laura() # create object
 # Blue base - Align left wheel left side to 2nd Bold line from left
 
 
-def Route1v2():
+def Route1():
     laura.Hub_StatusLight(Color.MAGENTA)
 
     """ Optional - Unregulated motor """
@@ -55,12 +55,12 @@ def Route1v2():
     laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,-1000,1600,Stop.COAST,True)
     laura.SingleMotor_BySeconds(PORT_RIGHTATTACH,1000,1600,Stop.COAST,False)
     wait(200)
-    laura.PointTurn_Degree(True,-300,200,Stop.BRAKE,50)
-    
+    laura.PointTurn_Degree(True,-300,200,True,50)
+        
     laura.MoveStraight_Distance(600,600,250,True,True,Stop.COAST,10)
     
     laura.SingleMotor_BySeconds(PORT_LEFTATTACH,-1000,540,Stop.COAST,False)
-    laura.MoveSteering_Degree(True,600,10,330,Stop.BRAKE,20)
+    laura.MoveSteering_Degree(True,600,10,330,True,20)
 
     laura.LineFollow_P_ByDegree(True,PORT_RIGHTCOLOUR,40,350,-0.4,Stop.BRAKE,20)
 
@@ -94,4 +94,4 @@ def Route1v2():
 # For individual route testing only
 # Comment it when using Master Program
 
-Route1v2()
+Route1()
